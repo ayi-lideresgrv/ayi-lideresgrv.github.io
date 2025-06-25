@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Un Reconocimiento Especial</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden; /* Evita el scroll mientras carga la animación */
+        }
+
+        /* Contenedor para la animación de partículas */
+        #particles-js {
+            position: fixed; /* Cambiado a fixed para cubrir toda la vista */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #0f172a; /* bg-slate-900 */
+            z-index: -1;
+        }
+
+        /* Animación para la aparición suave con desplazamiento */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Ocultar elementos para animarlos con JS */
+        .animated-item {
+            opacity: 0;
+        }
+        
+        /* Pequeño degradado en el borde superior */
+        .card-border-gradient {
+            border-top: 4px solid transparent;
+            border-image: linear-gradient(to right, #10B981, #3B82F6) 1;
+        }
+
+        /* Efecto de brillo en la tarjeta */
+        .card-glow {
+            transition: box-shadow 0.4s ease-in-out;
+        }
+        .card-glow:hover {
+            box-shadow: 0 0 25px rgba(22, 163, 74, 0.3), 0 0 25px rgba(59, 130, 246, 0.3);
+        }
+    </style>
+</head>
+<body class="text-gray-300">
+
+    <!-- Contenedor para la animación de partículas -->
+    <div id="particles-js"></div>
+
+    <!-- Contenedor principal para centrar el contenido -->
+    <div class="min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8 relative z-10">
+
+        <!-- Tarjeta de contenido -->
+        <div class="animated-item bg-slate-800/80 backdrop-blur-md rounded-2xl shadow-2xl shadow-slate-950/50 w-full max-w-2xl overflow-hidden card-border-gradient card-glow">
+            <div class="p-8 sm:p-12">
+                
+                <!-- Logo de la empresa -->
+                <header class="text-center mb-8">
+                    <!-- Logo de Ayi Group adjunto -->
+                    <img src="AyiGroup_Logotipo-02.png" alt="Logo Ayi Group" class="animated-item h-20 sm:h-24 mx-auto mb-6"
+                    onerror="this.onerror=null; this.src='https://placehold.co/200x50/1e293b/ffffff?text=Ayi+Group';">
+                    <h1 class="animated-item text-3xl sm:text-4xl font-bold text-white tracking-tight">Un reconocimiento para vos</h1>
+                </header>
+
+                <!-- Mensaje principal -->
+                <main class="text-base sm:text-lg leading-relaxed space-y-5 text-gray-300">
+                    <p class="animated-item">
+                        Queremos tomarnos un momento para agradecerles el esfuerzo, la dedicación y el compromiso que han puesto en este proyecto. Desde quienes estuvieron más en la implementación hasta quienes sostuvieron la operación, pensaron en el diseño, revisaron cada detalle o acompañaron en los momentos más tensos: <strong>su trabajo hizo una diferencia real</strong>.
+                    </p>
+                    <p class="animated-item">
+                        Este presente celebra más que un proyecto: celebra el esfuerzo silencioso, el cansancio compartido, las etapas cerradas con orgullo y los módulos que hoy son una realidad. Después de idas, vueltas y mucho retrabajo, se consolida algo más fuerte que el código: <strong>un equipo con coraje para avanzar</strong>.
+                    </p>
+                    <p class="animated-item font-semibold text-gray-200">
+                        A los que siguen, a los que se suman, a los que resistieron: gracias por no bajar los brazos. Queda camino por recorrer, pero lo más valioso ya está en marcha —la decisión de seguir adelante, juntos.
+                    </p>
+                </main>
+
+                <!-- Firma -->
+                <footer class="animated-item mt-10 text-right">
+                    <p class="text-lg font-semibold text-white">Con gratitud,</p>
+                    <p class="text-md text-gray-400">Tus líderes de equipo.</p>
+                </footer>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Librería Particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+    <script>
+        // Configuración de Particles.js
+        particlesJS('particles-js', {
+            "particles": {
+                "number": { "value": 70, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#ffffff" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.4, "random": true, "anim": { "enable": true, "speed": 1, "opacity_min": 0.1, "sync": false } },
+                "size": { "value": 3, "random": true },
+                "line_linked": { "enable": true, "distance": 150, "color": "#4a5568", "opacity": 0.3, "width": 1 },
+                "move": { "enable": true, "speed": 1.5, "direction": "none", "random": true, "straight": false, "out_mode": "out", "bounce": false }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": false }, "resize": true },
+                "modes": {
+                    "grab": { "distance": 140, "line_linked": { "opacity": 0.6 } }
+                }
+            },
+            "retina_detect": true
+        });
+
+        // Script para animar la aparición de los elementos
+        document.addEventListener('DOMContentLoaded', () => {
+            const items = document.querySelectorAll('.animated-item');
+            let delay = 250; // Milisegundos de retraso entre cada elemento
+
+            items.forEach((item, index) => {
+                setTimeout(() => {
+                    item.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, 300 + (delay * index)); // Retraso inicial + retraso por item
+            });
+            
+            // Permitir scroll después de que la animación principal haya comenzado
+            setTimeout(() => {
+                document.body.style.overflow = 'auto';
+            }, 300 + (delay * items.length));
+        });
+    </script>
+</body>
+</html>
