@@ -14,21 +14,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            overflow: hidden; /* Evita el scroll mientras carga la animación */
-        }
+        html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
-        /* Contenedor para la animación de partículas */
-        #particles-js {
-            position: fixed; /* Cambiado a fixed para cubrir toda la vista */
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #0f172a; /* bg-slate-900 */
-            z-index: -1;
-        }
+#particles-js {
+  position: fixed; /* fixed para que se mantenga siempre en pantalla */
+  top: 0;
+  left: 0;
+  width: 100vw; /* ancho viewport completo */
+  height: 100vh; /* alto viewport completo */
+  background-color: #0f172a;
+  z-index: -1;
+}
 
         /* Animación para la aparición suave con desplazamiento */
         @keyframes fadeInUp {
@@ -76,8 +76,7 @@
                 
                 <!-- Logo de la empresa -->
                 <header class="text-center mb-8">
-                    <!-- Logo de Ayi Group adjunto -->
-                    <img src="AyiGroup_Logotipo-02.png" alt="Logo Ayi Group" class="animated-item h-20 sm:h-24 mx-auto mb-6"
+                    <img src="https://ayi.group/wp-content/uploads/2024/04/Imagen-Footer-480x88.png" alt="Logo Ayi Group" class="animated-item h-12 sm:h-14 mx-auto mb-6"
                     onerror="this.onerror=null; this.src='https://placehold.co/200x50/1e293b/ffffff?text=Ayi+Group';">
                     <h1 class="animated-item text-3xl sm:text-4xl font-bold text-white tracking-tight">Un reconocimiento para vos</h1>
                 </header>
